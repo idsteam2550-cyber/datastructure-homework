@@ -1,13 +1,11 @@
+
 public class Node {
-	
 	int data;
-	Node left;
-	Node right;
+	Node left, right;
 	
-	public Node(int d) {
-		data  = d;
-		left  = null;
+	public Node (int new_data) {
+		data = new_data;
+		left = null;
 		right = null;
 	}
-
 }
