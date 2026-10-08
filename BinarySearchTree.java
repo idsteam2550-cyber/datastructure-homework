@@ -1,39 +1,28 @@
+class Node {
+	int data;
+	Node left;
+	Node right;
+	
+	public Node(int new_data) {
+		data = new_data;
+		left = null;
+		right = null;
+	}
+}
+
 public class BinarySearchTree {
-
 	private Node root;
-	private Node parent;
-	private Node deleteNode;
-
-	public boolean isEmpty() {
-		return root == null;
-	}
-	
-	public void sampleTree1() {
-		int[] nums = {20,10,60,7,11,30,65,3,40};
-		
-		for (int num : nums) {
-			insert(num);
-		}
-	}
-	
-	public void printTree(Node node, int depth) {
-		if (node != null) {
-			printTree(node.right, depth + 1);
-			System.out.println("    ".repeat(depth) + node.data);
-			printTree(node.left, depth + 1);
-		}
-	}
 	
 	public Node getRoot() {
 		return root;
 	}
 	
-	public Node getParent() {
-		return parent;
-	}
-	
-	public Node getDeleteNode() {
-		return deleteNode;
+	public void sampleTree() {
+		int[] nums = {22, 11, 48, 10, 15, 29, 57, 23, 30};
+		
+		for (int num : nums) {
+			insert(num);
+		}
 	}
 	
 	public void insert(int new_data) {
@@ -61,7 +50,11 @@ public class BinarySearchTree {
 		} //end if
 	}
 	
-
-
-    
+	public void printTree(Node node, int depth) {
+		if (node != null) {
+			printTree(node.right, depth + 1);
+			System.out.println("    ".repeat(depth) + node.data);
+			printTree(node.left, depth + 1);
+		}
+	}
 }
